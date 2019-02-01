@@ -1,0 +1,21 @@
+body {
+}
+
+.jumbotron {
+background: white;
+padding: 20px;
+margin: 0px;
+}
+ 
+#main-container {
+    width: 980px;
+}
+
+a {
+    color: white;
+}
+
+footer {
+background: #3d3d3e;
+color: white;
+}
