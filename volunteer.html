@@ -6,26 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cruffly WebSite</title>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css" /> -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- jumbotron -->
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Cruffly</h1>
-            <p class="lead">Your number one pet adoption service for all your adoption needs. Established since 1800
-                and have
-                provided homes for over 1 million pups.</p>
+        <div id="main-container" class="container">
+            <div class="row">
+                <div class="col-2">
+                    <h1 class="display-4">Cruffly</h1>
+                </div>
+                <div class="col-2">
+                    <img class="logo img-fluid" src="https://image.flaticon.com/icons/svg/64/64463.svg" alt="paw">
+                </div>
+
+                <div class="col-8">
+                    <p class="lead">Your number one pet adoption service for all your adoption needs. Established since
+                        1800 and have
+                        provided homes for over 1 million pups.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- break beinging of Nav Bar-->
+
+    <!-- break begin of Nav Bar-->
     <ul class="nav justify-content-center" style="background-color: #3d3d3e">
         <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="about.html#">About Us</a>
@@ -37,24 +54,23 @@
             <a class="nav-link" href="volunteer.html">Volunteer</a>
         </li>
     </ul>
-    <br>
 
     <!-- volunteer form -->
     <div id="main-container" class="container">
-        <form>
+        <form id="volunteer-form" class="container-fluid">
             <div class="form-group">
-                <label for="exampleFormControlInput1">Name</label>
+                <label for="input1">Name</label>
                 <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="John Smith">
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <label for="input1">Email address</label>
+                <input type="email" class="form-control" id="input1" placeholder="name@example.com">
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Select Preferred Volunteer Location</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <label for="select1">Select Preferred Volunteer Location</label>
+                <select class="form-control" id="select1">
                     <option>Arizona</option>
                     <option>California</option>
                     <option>Wisconsin</option>
@@ -65,32 +81,48 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Comments</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="textarea1">Comments</label>
+                <textarea class="form-control" id="textarea1" rows="3"></textarea>
             </div>
 
             <button type="button" class="btn btn-secondary btn-lg">Submit</button>
         </form>
-
     </div>
-
-
 
     <!-- footer -->
     <footer class="fixed-bottom">
-        <br>
 
+        <!-- email subcription form -->
         <form class="form-inline">
+            <h5>Sign up for emails.</h5>
             <input class="form-control mr-sm-2" type="search" placeholder="email address" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up For Emails!</button>
+
+            <button class="btn btn-info my-2 my-sm-0" type="submit">></button>
         </form>
 
+        <!-- social media buttons w/ images -->
+        <div class="text-center">
+            <img class="facebookimg" id="facebook" src="assets/images/flogo-HexRBG-Wht-58.png" alt="f">
 
-        <img src="" alt="fb">
-        <img src="" alt="twitter">
-        <img src="" alt="pintrist">
-        <p class="text-center">Copyright &copy;</p>
+
+            <img class="twitterimg" id="twitter" src="assets/images/Twitter_Social_Icon_Circle_White.png" alt="bird">
+
+
+            <img class="pintrestimg" id="pintrest" src="assets/images/badgeRGB-white.png" alt="pin">
+        </div>
+
+        <br>
+
+        <p class="text-center">&copy2019</p>
+
     </footer>
+
+    <!-- jQuery link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- javaScript link -->
+    <script type="text/javascript" src="logic.js"></script>
+
 </body>
 
 </html>
