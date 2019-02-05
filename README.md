@@ -1,8 +1,8 @@
 # project-1
+## Team Members
+#### Scott, Sydney, Clarissa, Sarah
 
-// Authors: Scott, Sydney, Clarissa, Sarah
-
-//Initial Draft --markdown to be added
+## Initial Draft / Outline
 
 Project Title:  Cruffly
 
@@ -19,3 +19,6 @@ Rough Breakdown of Tasks:
 Scott/Clarissa - Maps/petfinder API intergration/implementation.
 Sarah/Syd - pintrest API intergration/implementation.
 Whole group - General HTML/css  (html planned to be done friday or over weekend at latest).
+
+## Minimum Viable Product
+
