@@ -15,7 +15,13 @@
         crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+    <!-- jQuery UI -->
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="assets/javaScript/jquery-ui.js"></script>
+
 </head>
 
 <body>
@@ -42,21 +48,20 @@
     <!-- break beinging of Nav Bar-->
     <ul class="nav justify-content-center" style="background-color: #3d3d3e">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a id="home" class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.html#">About Us</a>
+            <a id="about" class="nav-link" href="about.html#">About Us</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="adopt.html">Adopt</a>
+            <a id="adopt" class="nav-link" href="adopt.html">Adopt</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="volunteer.html">Volunteer</a>
+            <a id="vol" class="nav-link" href="volunteer.html">Volunteer</a>
         </li>
     </ul>
     <br>
     <br>
-
 
     <form>
         <div class="form-group">
@@ -69,7 +74,7 @@
     <div id='myMap' style='width: 700px; height: 500px; margin:auto;'></div>
 
     <!-- footer -->
-    <footer class="fixed-bottom">
+    <footer class="footer fixed-bottom">
 
         <!-- email subcription form -->
         <form class="form-inline">
@@ -105,7 +110,7 @@
         async defer></script>
 
     <!-- javaScript link -->
-    <script type="text/javascript" src="logic.js"></script>
+    <script type="text/javascript" src="assets/javaScript/logic.js"></script>
 
 </body>
 
