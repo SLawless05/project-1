@@ -1,8 +1,8 @@
 # project-1
+## Team Members
+#### Scott, Sydney, Clarissa, Sarah
 
-// Authors: Scott, Sydney, Clarissa, Sarah
-
-//Initial Draft --markdown to be added
+## Initial Draft / Outline
 
 Project Title:  Cruffly
 
