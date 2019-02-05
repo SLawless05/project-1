@@ -1,3 +1,13 @@
+#container{
+    height: 10px;
+    background-color: aqua;
+
+}
+
+.carousel-item img{
+    height: 460px !important;
+    width: auto;  
+}  
 .jumbotron {
 background: rgb(211, 211, 211);
 padding: 20px;
@@ -25,7 +35,6 @@ font-family: 'Pacifico', cursive;
 }
  
 #main-container {
-margin-top: 5px;
 margin-bottom: 5px;
 width: 980px;
 }
@@ -49,11 +58,6 @@ background-color: #17a2b8;
 
 
 /* Adopt Section */
-.toggler { width: 500px; height: 200px; position: relative; }
-    #button { padding: .5em 1em; text-decoration: none; }
-    #effect {padding: 0.4em; position: relative; }
-    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
-    .ui-effects-transfer { border: 2px dotted gray; }
 
 
 /* footer and everything inside it */
@@ -67,7 +71,7 @@ color: white;
 font-size: 10px;
 position: sticky;
 bottom: 0;
-margin-top: 100px;
+margin-top: 50px;
 }
 
 .form-inline {
@@ -85,3 +89,26 @@ color: #3d3d3e;
 width: 25px;
 margin: 10px;
 }
+
+#submit {
+    background-color: #17a2b8;
+    color: #fff;
+    margin-right: 45%;
+    margin-left: 45%;
+    margin-top: 16px;
+}
+
+#submit-form {
+    width: 40%;
+    margin:auto;
+}
+
+.card {
+    width: 50%;
+    margin:auto;
+}
+
+.copy{
+margin-bottom: 0;
+}
+
