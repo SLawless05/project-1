@@ -169,3 +169,11 @@ function loadMapScenario() {
     });
 
 }
+
+function validateForm() {
+    var x = document.forms["myForm"]["input1"].value;
+    if (x == "") {
+      alert("Please enter a valid email");
+      return false;
+    }
+}
