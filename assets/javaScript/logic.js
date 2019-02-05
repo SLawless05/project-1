@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // Set effect from select menu value
-    $("#about").on("click", function () {
+    $(".nav").on("click", function () {
         // Run the effect
         $("p").effect("slide", "slow");
     });
