@@ -35,12 +35,11 @@ font-family: 'Pacifico', cursive;
 }
  
 #main-container {
-margin-top: 5px;
 margin-bottom: 5px;
 width: 980px;
 }
 
-a {
+.nav a {
 color: white !important;
 border: 1px solid #FFFFFF;
 text-transform: uppercase;
@@ -48,7 +47,7 @@ font-size: 18px;
 text-decoration: none !important;
 }
 
-a:hover {
+.nav a:hover {
 background-color: #17a2b8;
 }
 
@@ -62,10 +61,17 @@ background-color: #17a2b8;
 
 
 /* footer and everything inside it */
- footer {
+h5{
+color: black;
+}
+
+footer {
 background: #3d3d3e;
 color: white;
 font-size: 10px;
+position: sticky;
+bottom: 0;
+margin-top: 50px;
 }
 
 .form-inline {
@@ -77,9 +83,14 @@ margin-right: auto;
 margin-left: auto;
 background: rgb(211, 211, 211);
 color: #3d3d3e;
+
 }
 
 .facebookimg, .twitterimg, .pintrestimg {
 width: 25px;
 margin: 10px;
+}
+
+.copy{
+margin-bottom: 0;
 }
