@@ -112,3 +112,7 @@ margin: 10px;
 .copy{
 margin-bottom: 0;
 }
+
+#sticky-bottom{
+    position: sticky !important;
+}
