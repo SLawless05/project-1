@@ -30,7 +30,7 @@ margin-bottom: 5px;
 width: 980px;
 }
 
-a {
+.nav a {
 color: white !important;
 border: 1px solid #FFFFFF;
 text-transform: uppercase;
@@ -38,7 +38,7 @@ font-size: 18px;
 text-decoration: none !important;
 }
 
-a:hover {
+.nav a:hover {
 background-color: #17a2b8;
 }
 
@@ -49,13 +49,25 @@ background-color: #17a2b8;
 
 
 /* Adopt Section */
+.toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; }
+    #effect {padding: 0.4em; position: relative; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+    .ui-effects-transfer { border: 2px dotted gray; }
 
 
 /* footer and everything inside it */
- footer {
+h5{
+color: black;
+}
+
+footer {
 background: #3d3d3e;
 color: white;
 font-size: 10px;
+position: sticky;
+bottom: 0;
+margin-top: 100px;
 }
 
 .form-inline {
@@ -67,6 +79,7 @@ margin-right: auto;
 margin-left: auto;
 background: rgb(211, 211, 211);
 color: #3d3d3e;
+
 }
 
 .facebookimg, .twitterimg, .pintrestimg {
@@ -84,6 +97,11 @@ margin: 10px;
 
 #submit-form {
     width: 40%;
+    margin:auto;
+}
+
+.card {
+    width: 50%;
     margin:auto;
 }
 
