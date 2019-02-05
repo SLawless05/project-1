@@ -63,10 +63,15 @@
     <br>
     <br>
 
-    <!-- Maps section -->
-    <div id="main-container" class="container">
+    <form>
+        <div class="form-group">
+            <label for="zip-code-input">Zipcode</label>
+            <input type="number" class="form-control" id="zip-code-input" placeholder="Enter Zipcode">
+            <button id="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
 
-    </div>
+    <div id='myMap' style='width: 700px; height: 500px; margin:auto;'></div>
 
     <!-- footer -->
     <footer class="footer fixed-bottom">
@@ -95,6 +100,14 @@
         <p class="text-center">&copy2019</p>
 
     </footer>
+
+    <!-- jQuery link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--BingMaps API-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=As-D2zgNd8Hd4X6WJXuu8iW0NwsJ8lPQzLWR2x_YtdZuCDO3Ihg8NNgnfjTTOKf9&callback=loadMapScenario'
+        async defer></script>
 
     <!-- javaScript link -->
     <script type="text/javascript" src="assets/javaScript/logic.js"></script>
