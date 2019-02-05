@@ -20,5 +20,4 @@ Scott/Clarissa - Maps/petfinder API intergration/implementation.
 Sarah/Syd - pintrest API intergration/implementation.
 Whole group - General HTML/css  (html planned to be done friday or over weekend at latest).
 
-## Minimum Viable Product
-
+Our MVP for Project 1 is to provide the user with a functional map enabling them to find the closest animal shelter to their zip code. 
