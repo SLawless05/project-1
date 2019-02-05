@@ -51,7 +51,7 @@ function loadMapScenario() {
 
             map.setView({
                 //changes the type of map if not aerial view
-                mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+                mapTypeId: Microsoft.Maps.MapTypeId.road,
                 //sets the center
                 center: new Microsoft.Maps.Location(lat, long),
                 //sets the zoom
@@ -68,6 +68,7 @@ function loadMapScenario() {
                 url: "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=animalshelter&userLocation=" + lat + ",%20" + long + "&key=As-D2zgNd8Hd4X6WJXuu8iW0NwsJ8lPQzLWR2x_YtdZuCDO3Ihg8NNgnfjTTOKf9",
                 method: "GET"
             }).then(function (res) {
+                console.log(res);
 
                 //logic for generating the pushpins
                 for (i = 0; i < res.resourceSets[0].estimatedTotal; i++) {
@@ -82,6 +83,18 @@ function loadMapScenario() {
 
                     //Add the pushpin to the map
                     map.entities.push(pin);
+
+                    //add string var siteURL to hold the website url
+                    var siteURL = res.resourceSets[0].resources[i].Website;
+
+                    //Add info to table 
+                    var row = $("<tr>").append(
+                        $("<td>").html('<a href="' + siteURL + '">' + res.resourceSets[0].resources[i].name + '</a>'),
+                        // $("<td>").html(`<a href="${siteURL}">${res.resourceSets[0].resources[i].Website}</a>`),
+                        $("<td>").text(res.resourceSets[0].resources[i].Address.addressLine)
+                    );
+                    $("#table-div").append(row);
+
                 }
 
             });
