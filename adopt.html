@@ -15,7 +15,7 @@
         crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -54,23 +54,19 @@
             <a class="nav-link" href="volunteer.html">Volunteer</a>
         </li>
     </ul>
+    <br>
+    <br>
 
-    <!-- start of carousel -->
-    <div id="main-container" class="container">
-        <div id="carouselExampleSlidesOnly" class="carousel-slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/images/sample1.jpg" class="d-block w-100" alt="1">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/sample2.jpg" class="d-block w-100" alt="2">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/sketch-3.jpg" class="d-block w-100" alt="3">
-                </div>
-            </div>
+
+    <form>
+        <div class="form-group">
+            <label for="zip-code-input">Zipcode</label>
+            <input type="number" class="form-control" id="zip-code-input" placeholder="Enter Zipcode">
+            <button id="submit" class="btn btn-primary">Submit</button>
         </div>
-    </div>
+    </form>
+
+    <div id='myMap' style='width: 700px; height: 500px; margin:auto;'></div>
 
     <!-- footer -->
     <footer class="fixed-bottom">
@@ -103,9 +99,13 @@
     <!-- jQuery link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!--BingMaps API-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=As-D2zgNd8Hd4X6WJXuu8iW0NwsJ8lPQzLWR2x_YtdZuCDO3Ihg8NNgnfjTTOKf9&callback=loadMapScenario'
+        async defer></script>
+
     <!-- javaScript link -->
     <script type="text/javascript" src="logic.js"></script>
-
 
 </body>
 
