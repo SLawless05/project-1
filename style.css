@@ -1,0 +1,75 @@
+.jumbotron {
+background: rgb(211, 211, 211);
+padding: 20px;
+margin: 0px;
+}
+
+.display-4 {
+color: #17a2b8;
+padding-right: 10px;
+font-size: 60px;
+font-family: 'Pacifico', cursive;;
+}
+
+.img-fluid {
+max-width: 100%;
+height: 80px;
+padding-left: 5px;
+}
+
+.lead {
+padding-top: 20px;
+color: black; 
+font-size: 18px;
+font-family: 'Pacifico', cursive; 
+}
+ 
+#main-container {
+margin-top: 5px;
+margin-bottom: 5px;
+width: 980px;
+}
+
+a {
+color: white !important;
+border: 1px solid #FFFFFF;
+text-transform: uppercase;
+font-size: 18px;
+text-decoration: none !important;
+}
+
+a:hover {
+background-color: #17a2b8;
+}
+
+/* Index Section */
+
+
+/* Volunteer Section */
+
+
+/* Adopt Section */
+
+
+/* footer and everything inside it */
+ footer {
+background: #3d3d3e;
+color: white;
+font-size: 10px;
+}
+
+.form-inline {
+padding-right: 600px;
+padding-left: 600px;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-right: auto;
+margin-left: auto;
+background: rgb(211, 211, 211);
+color: #3d3d3e;
+}
+
+.facebookimg, .twitterimg, .pintrestimg {
+width: 25px;
+margin: 10px;
+}
