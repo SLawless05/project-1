@@ -1,9 +1,5 @@
 
 $(document).ready(function () {
-
-   
-     
-       
      
         // Set effect from select menu value
         $( "#about" ).on( "click", function() {

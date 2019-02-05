@@ -91,6 +91,25 @@ width: 25px;
 margin: 10px;
 }
 
+#submit {
+    background-color: #17a2b8;
+    color: #fff;
+    margin-right: 45%;
+    margin-left: 45%;
+    margin-top: 16px;
+}
+
+#submit-form {
+    width: 40%;
+    margin:auto;
+}
+
+.card {
+    width: 50%;
+    margin:auto;
+}
+
 .copy{
 margin-bottom: 0;
 }
+
