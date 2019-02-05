@@ -1,3 +1,13 @@
+#container{
+    height: 10px;
+    background-color: aqua;
+
+}
+
+.carousel-item img{
+    height: 460px !important;
+    width: auto;  
+}  
 .jumbotron {
 background: rgb(211, 211, 211);
 padding: 20px;
