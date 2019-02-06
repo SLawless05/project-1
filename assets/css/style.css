@@ -112,9 +112,20 @@ margin: 10px;
 margin-bottom: 0;
 }
 
+<<<<<<< HEAD
 #sticky-bottom {
     position: sticky !important;
     
 }
 
 
+=======
+#sticky-bottom{
+position: sticky !important;
+}
+
+#puppyContainer{
+    width: 80%;
+    margin: auto;
+}
+>>>>>>> 4059abe7203099a5e02d6582e82c12fd16cf8996

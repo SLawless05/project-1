@@ -17,9 +17,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
     <!-- jQuery UI -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="assets/javaScript/jquery-ui.js"></script>
+
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 
 </head>
 
@@ -62,6 +67,7 @@
     <br>
     <br>
 
+    <!-- map area -->
     <form id="submit-form">
         <div class="form-group">
             <label for="zip-code-input">Zipcode</label>
@@ -75,6 +81,7 @@
     <br>
     <br>
 
+    <!-- shelter info -->
     <div class="card">
         <div class="card-header">
             Shelters
@@ -86,6 +93,7 @@
             </tr>
         </table>
     </div>
+    </div>
 
     <!-- footer -->
     <footer id="sticky-bottom" class="footer fixed-bottom">
@@ -93,9 +101,9 @@
         <!-- email subcription form -->
         <form class="form-inline">
             <h5>Sign up for emails.</h5>
-            <input class="form-control mr-sm-2" type="search" placeholder="email address" aria-label="Search">
+            <input id="email-input" class="form-control mr-sm-2" type="search" placeholder="email address" aria-label="Search">
 
-            <button class="btn btn-info my-2 my-sm-0" type="submit">></button>
+            <button id="email-btn" class="btn btn-info my-2 my-sm-0" type="submit">></button>
         </form>
 
         <!-- social media buttons w/ images -->
