@@ -117,3 +117,7 @@ margin-bottom: 0;
 position: sticky !important;
 }
 
+#puppyContainer{
+    width: 80%;
+    margin: auto;
+}

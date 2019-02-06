@@ -1,3 +1,4 @@
+
 var config = {
     apiKey: "AIzaSyAM_TCJ486KJ8AvUsAgNGtqWvYufDimaLM",
     authDomain: "puppy-email-request.firebaseapp.com",
@@ -109,6 +110,21 @@ database.ref().on("value", function (snapshot) {
     console.log("The read failed: " + errorObject.code);
 });
 
+//firebase initialization start
+var config = {
+    apiKey: "AIzaSyD8odfkC1lXwkld3EO9i15Yn-4T6GFYJgg",
+    authDomain: "project-1-ae86.firebaseapp.com",
+    databaseURL: "https://project-1-ae86.firebaseio.com",
+    projectId: "project-1-ae86",
+    storageBucket: "project-1-ae86.appspot.com",
+    messagingSenderId: "921988226998"
+};
+
+firebase.initializeApp(config);
+
+var database = firebase.database();
+//firebase initialization end
+
 $(document).ready(function () {
     // Set effect from select menu value
     $(".nav").on("click", function () {
@@ -133,7 +149,6 @@ $(document).ready(function () {
     });
 
 });
-
 
 var puppyItem = $("#carousel-inner")
 //var puppyArray= [];
@@ -186,9 +201,6 @@ function loadMapScenario() {
     var pushpin = new Microsoft.Maps.Pushpin(location, { color: 'green' });
     var zipLocation;
 
-    //console log the pushpin location attributes
-    console.log(pushpin.getLocation());
-
     //push the pin onto the map
     map.entities.push(pushpin);
 
@@ -205,13 +217,23 @@ function loadMapScenario() {
     //onclick function for the submit button
     $("#submit").on("click", function () {
 
+        //empties the table div if there is any data
+        $("#table-div").empty();
+
+        //zipcode validation function.  since the form is already limited to numerical input we just have to check if the number entered is 5-digits.  there are many 5-digit comboes that are not valid but checking for those would require a database containing all valid zop code and a reference to that but I could not get the implementation correct for that and It seems a bit outside of the scope of this project given the time constraints.
         function zipCodeValidation(zipInput) {
             if (zipInput.length !== 5) {
+                $("#zip-code-input").val("");
                 $("#zip-code-input").attr("placeholder", "Please enter a 5-digit Zipcode");
-                console.log("Please enter a 5-digit Zipcode");
+                $("#zip-code-input").css("background-color", "#840000");
+                $("#zip-code-input").css("color", "#ffffff");
                 return false;
             }
             else {
+                $("#zip-code-input").val("");
+                $("#zip-code-input").attr("placeholder", "Enter Zipcode");
+                $("#zip-code-input").css("background-color", "#ffffff");
+                $("#zip-code-input").css("color", "#000000");
                 return true;
             }
         }
@@ -224,7 +246,6 @@ function loadMapScenario() {
         var lat = 0;
         //setting a zipcode variable and setting it equal to the form value
         var zipcode = $("#zip-code-input").val();
-        console.log(zipcode);
         if (zipCodeValidation(zipcode) === true) {
 
             //ajax call
@@ -243,7 +264,7 @@ function loadMapScenario() {
                 zipLocation = new Microsoft.Maps.Location(lat, long);
 
                 map.setView({
-                    //changes the type of map if not aerial view
+                    //changes the type of map if not road view
                     mapTypeId: Microsoft.Maps.MapTypeId.road,
                     //sets the center
                     center: new Microsoft.Maps.Location(lat, long),
@@ -251,17 +272,11 @@ function loadMapScenario() {
                     zoom: 10
                 });
 
-                //troubleshooting can delete when fixed.
-                console.log("logging coords for zipLocation")
-                console.log("lat " + lat);
-                console.log("long " + long);
-
                 //nested ajax call to generate pushpins for local shelters
                 $.ajax({
                     url: "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=animalshelter&userLocation=" + lat + ",%20" + long + "&key=As-D2zgNd8Hd4X6WJXuu8iW0NwsJ8lPQzLWR2x_YtdZuCDO3Ihg8NNgnfjTTOKf9",
                     method: "GET"
                 }).then(function (res) {
-                    console.log(res);
 
                     //logic for generating the pushpins
                     for (i = 0; i < res.resourceSets[0].estimatedTotal; i++) {
@@ -280,13 +295,30 @@ function loadMapScenario() {
                         //add string var siteURL to hold the website url
                         var siteURL = res.resourceSets[0].resources[i].Website;
 
-                        //Add info to table 
-                        var row = $("<tr>").append(
-                            $("<td>").html('<a href="' + siteURL + '" target="_blank">' + res.resourceSets[0].resources[i].name + '</a>'),
-                            // $("<td>").html(`<a href="${siteURL}">${res.resourceSets[0].resources[i].Website}</a>`),
-                            $("<td>").text(res.resourceSets[0].resources[i].Address.addressLine)
-                        );
+                        //add info to table based on whether or not the api returned website data for each shelter
+                        if (res.resourceSets[0].resources[i].Website === null) {
+                            var row = $("<tr>").append(
+                                $("<td>").html(res.resourceSets[0].resources[i].name + " (no website url)"),
+                                // $("<td>").html(`<a href="${siteURL}">${res.resourceSets[0].resources[i].Website}</a>`),
+                                $("<td>").text(res.resourceSets[0].resources[i].Address.addressLine)
+                            );
+                        }
+                        else {
+                            var row = $("<tr>").append(
+                                $("<td>").html('<a href="' + siteURL + '" target="_blank">' + res.resourceSets[0].resources[i].name + '</a>'),
+                                // $("<td>").html(`<a href="${siteURL}">${res.resourceSets[0].resources[i].Website}</a>`),
+                                $("<td>").text(res.resourceSets[0].resources[i].Address.addressLine)
+                            );
+                        }
+                        //appends info to table
                         $("#table-div").append(row);
+
+                        // pushing data to firebase.
+                        database.ref().push({
+                            Name: res.resourceSets[0].resources[i].name,
+                            Website: siteURL,
+                            Address: res.resourceSets[0].resources[i].Address.addressLine
+                        });
 
                     }
 
