@@ -114,5 +114,11 @@ margin-bottom: 0;
 }
 
 #sticky-bottom{
+   
     position: sticky !important;
+}
+
+#puppyContainer{
+    width: 80%;
+    margin: auto;
 }
