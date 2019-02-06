@@ -17,9 +17,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
     <!-- jQuery UI -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="assets/javaScript/jquery-ui.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
 </head>
 
 <body>
@@ -66,17 +71,17 @@
         <form id="volunteer-form" class="container-fluid">
             <div class="form-group">
                 <label for="input1">Name</label>
-                <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="John Smith">
+                <input type="name" class="form-control" id="name-form" placeholder="John Smith">
             </div>
 
             <div class="form-group">
                 <label for="input1">Email address</label>
-                <input type="email" class="form-control" id="input1" placeholder="name@example.com">
+                <input type="email" class="form-control" id="email-form" placeholder="name@example.com">
             </div>
 
             <div class="form-group">
                 <label for="select1">Select Preferred Volunteer Location</label>
-                <select class="form-control" id="select1">
+                <select class="form-control" id="loc-form">
                     <option>Arizona</option>
                     <option>California</option>
                     <option>Wisconsin</option>
@@ -88,10 +93,10 @@
 
             <div class="form-group">
                 <label for="textarea1">Comments</label>
-                <textarea class="form-control" id="textarea1" rows="3"></textarea>
+                <textarea class="form-control" id="textarea" rows="3"></textarea>
             </div>
 
-            <button type="button" class="btn btn-secondary btn-lg">Submit</button>
+            <button id="vol-btn" type="button" class="btn btn-secondary btn-lg">Submit</button>
         </form>
     </div>
 
@@ -101,9 +106,9 @@
         <!-- email subcription form -->
         <form class="form-inline">
             <h5>Sign up for emails.</h5>
-            <input class="form-control mr-sm-2" type="search" placeholder="email address" aria-label="Search">
+            <input id="email-input" class="form-control mr-sm-2" type="search" placeholder="email address" aria-label="Search">
 
-            <button class="btn btn-info my-2 my-sm-0" type="submit">></button>
+            <button id="email-btn" class="btn btn-info my-2 my-sm-0" type="submit">></button>
         </form>
 
         <!-- social media buttons w/ images -->

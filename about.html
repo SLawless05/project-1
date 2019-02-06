@@ -23,6 +23,9 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
         crossorigin="anonymous"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 </head>
 
 <body>
@@ -38,7 +41,8 @@
                 </div>
 
                 <div class="col-8">
-                    <div class="lead">Your number one pet adoption service for all your adoption needs. Established since
+                    <div class="lead">Your number one pet adoption service for all your adoption needs. Established
+                        since
                         1800 and have
                         provided homes for over 1 million pups.</div>
                 </div>
@@ -66,34 +70,31 @@
 
     <!-- About us section -->
     <div id="main-container" class="container">
-        <div class="toggler">
-            <div id="slide" class="ui-widget-content ui-corner-all">
-                <h3 class="ui-widget-header ui-corner-all"></h3>
+        <div id="bounce" class="ui-widget-content">
 
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit a ipsum molestias quidem
-                    voluptatum?
-                    Suscipit soluta necessitatibus aliquam praesentium, veniam sed porro possimus nostrum totam
-                    officiis
-                    quaerat odio, eius tenetur!Harum numquam similique sed voluptas repudiandae ab non est nisi,
-                    laudantium,
-                    dolores esse libero nemo repellendus a recusandae mollitia ipsum quo. Esse corrupti ipsa dolor
-                    neque
-                    consequatur repellat atque natus?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit a ipsum molestias quidem
+                voluptatum?
+                Suscipit soluta necessitatibus aliquam praesentium, veniam sed porro possimus nostrum totam
+                officiis
+                quaerat odio, eius tenetur!Harum numquam similique sed voluptas repudiandae ab non est nisi,
+                laudantium,
+                dolores esse libero nemo repellendus a recusandae mollitia ipsum quo. Esse corrupti ipsa dolor
+                neque
+                consequatur repellat atque natus?</p>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sed quos neque officiis,
-                    repellendus eius
-                    voluptatibus quas voluptatem expedita minima aliquam dicta ipsam illum assumenda repellat
-                    architecto velit
-                    magnam voluptatum.Non expedita, magnam inventore incidunt natus illo accusantium quidem possimus
-                    recusandae, nihil, facilis impedit dolores veniam error? Laboriosam, veritatis. Nam accusantium
-                    dignissimos
-                    quia laborum nulla deleniti voluptas atque ab labore?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sed quos neque officiis,
+                repellendus eius
+                voluptatibus quas voluptatem expedita minima aliquam dicta ipsam illum assumenda repellat
+                architecto velit
+                magnam voluptatum.Non expedita, magnam inventore incidunt natus illo accusantium quidem possimus
+                recusandae, nihil, facilis impedit dolores veniam error? Laboriosam, veritatis. Nam accusantium
+                dignissimos
+                quia laborum nulla deleniti voluptas atque ab labore?</p>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore blanditiis harum optio in eum
-                    minima,
-                    consequatur modi sit dolorem sed impedit, ea eligendi laboriosam fugit culpa tempora earum minus!
-                    Eligendi.</p>
-            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore blanditiis harum optio in eum
+                minima,
+                consequatur modi sit dolorem sed impedit, ea eligendi laboriosam fugit culpa tempora earum minus!
+                Eligendi.</p>
         </div>
     </div>
 
@@ -103,9 +104,9 @@
         <!-- email subcription form -->
         <form class="form-inline">
             <h5>Sign up for emails.</h5>
-            <input class="form-control mr-sm-2" type="search" placeholder="email address" aria-label="Search">
+            <input id="email-input" class="form-control mr-sm-2" type="search" placeholder="email address" aria-label="Search">
 
-            <button class="btn btn-info my-2 my-sm-0" type="submit">></button>
+            <button id="email-btn" class="btn btn-info my-2 my-sm-0" type="submit">></button>
         </form>
 
         <!-- social media buttons w/ images -->

@@ -1,17 +1,120 @@
+var config = {
+    apiKey: "AIzaSyAM_TCJ486KJ8AvUsAgNGtqWvYufDimaLM",
+    authDomain: "puppy-email-request.firebaseapp.com",
+    databaseURL: "https://puppy-email-request.firebaseio.com",
+    projectId: "puppy-email-request",
+    storageBucket: "puppy-email-request.appspot.com",
+    messagingSenderId: "652669284423"
+};
+firebase.initializeApp(config);
+
+// Create a variable to reference the database
+var database = firebase.database();
+
+//email sign up - stored to firebase
+$("#email-btn").on("click", function (event) {
+    event.preventDefault();
+
+    // Get inputs
+    var email = $("#email-input").val().trim();
+
+    // Creates local "temporary" object for holding train data
+    var newEmail = {
+        email: email,
+    };
+
+    // Uploads train data to the database
+    database.ref().push(newEmail);
+
+    // logs everything to console
+    console.log(newEmail.email);
+
+
+    // clears all of the text-box
+    $("#email-input").val("");
+});
+
+// Firebase is always watching for changes to the data.
+// When changes occurs it will print them to console and html
+database.ref().on("value", function (snapshot) {
+
+    // Print the initial data to the console.
+    console.log(snapshot.val());
+
+    // Log the value of the various properties
+    console.log(snapshot.val().email);
+
+    // Change the HTML
+    // $("#displayed-data").text(snapshot.val().email);
+
+    // If any errors are experienced, log them to console.
+}, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+});
+
+
+//volunteer info - stored to firebase
+$("#vol-btn").on("click", function (event) {
+    event.preventDefault();
+
+    // Get inputs
+    var name = $("#name-form").val();
+    var email = $("#email-form").val();
+    var location = $("#loc-form").val();
+    var comments = $("#textarea").val();
+
+    // Creates local "temporary" object for holding train data
+    var newForm = {
+        name: name,
+        email: email,
+        location: location,
+        comments: comments,
+    };
+
+    // Uploads train data to the database
+    database.ref().push(newForm);
+
+    // logs everything to console
+    console.log(newForm.name);
+    console.log(newForm.email);
+    console.log(newForm.location);
+    console.log(newForm.comments);
+
+
+    // clears all of the text-box
+    $("#name-form").val("");
+    $("#email-form").val("");
+    $("#loc-form").val("");
+    $("#textarea").val("");
+});
+
+// Firebase is always watching for changes to the data.
+// When changes occurs it will print them to console and html
+database.ref().on("value", function (snapshot) {
+
+    // Print the initial data to the console.
+    console.log(snapshot.val());
+
+    // Log the value of the various properties
+    console.log(snapshot.val().name);
+    console.log(snapshot.val().email);
+    console.log(snapshot.val().location);
+    console.log(snapshot.val().comments);
+
+    // Change the HTML
+    // $("#displayed-data").text(snapshot.val().email);
+
+    // If any errors are experienced, log them to console.
+}, function (errorObject) {
+    console.log("The read failed: " + errorObject.code);
+});
 
 $(document).ready(function () {
-
-
-
-
-
     // Set effect from select menu value
     $(".nav").on("click", function () {
         // Run the effect
-        $("#slide").effect("slide");
+        $("#bounce").effect("bounce");
     });
-
-
 
     // Social media button links
     $("#facebook").on("click", function (event) {
