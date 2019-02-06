@@ -110,20 +110,6 @@ database.ref().on("value", function (snapshot) {
     console.log("The read failed: " + errorObject.code);
 });
 
-//firebase initialization start
-var config = {
-    apiKey: "AIzaSyD8odfkC1lXwkld3EO9i15Yn-4T6GFYJgg",
-    authDomain: "project-1-ae86.firebaseapp.com",
-    databaseURL: "https://project-1-ae86.firebaseio.com",
-    projectId: "project-1-ae86",
-    storageBucket: "project-1-ae86.appspot.com",
-    messagingSenderId: "921988226998"
-};
-
-firebase.initializeApp(config);
-
-var database = firebase.database();
-//firebase initialization end
 
 $(document).ready(function () {
     // Set effect from select menu value
